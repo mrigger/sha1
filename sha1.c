@@ -170,9 +170,9 @@ Sha1Digest Sha1Digest_fromStr (const char* src)
 {
     Sha1Digest d;
     int i;
-    
+    int length = strlen(src);
     assert(src); // also, src must be at least 40 bytes
-    for (i = 0; i < 20 && src[i]; i++)
+    for (i = 0; i < length/2; i++)
     {
         // \todo just use atoi or something
         int c0 = tolower(*src++);
